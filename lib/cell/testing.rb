@@ -47,7 +47,7 @@ module Cell
       return unless controller_class
 
       controller_class.new.tap do |ctl|
-        ctl.request = ::ActionController::TestRequest.new
+        ctl.request = ::ActionController::TestRequest.create
         ctl.instance_variable_set :@routes, ::Rails.application.routes.url_helpers
       end
     end
